@@ -1,0 +1,58 @@
+# Dependencies
+node_modules/
+backend/venv/
+backend/.venv/
+python_env/
+
+# Build Output
+dist/
+dist-electron/
+release/
+build/
+backend/build/
+backend/dist/
+*.spec
+
+# Keep the winregi.spec though, as it might be custom config?
+# The user's pyinstaller spec is d:/Projects/winregii/backend/winregi.spec
+# Standard pyinstaller creates .spec files usually, but we have a specific one we might want to keep?
+# Actually backend/winregi.spec is a source file for us.
+!backend/winregi.spec
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# WinRegi Specific
+backend/user.json
+# We moved data to APPDATA, but just in case
+local_db.sqlite

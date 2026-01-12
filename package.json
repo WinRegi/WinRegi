@@ -1,0 +1,26 @@
+{
+  "name": "winregii",
+  "version": "1.0.0",
+  "main": "dist-electron/main.js",
+  "description": "Windows Control Center",
+  "author": "Anish Kumar",
+  "scripts": {
+    "dev": "concurrently \"npm run dev:renderer\" \"npm run dev:electron\"",
+    "dev:renderer": "npm run dev --prefix src/renderer",
+    "dev:electron": "wait-on http://localhost:5173 && tsc -p src/electron && cross-env NODE_ENV=development electron .",
+    "build": "npm run build --prefix src/renderer && tsc -p src/electron && electron-builder",
+    "compile:backend": "backend/venv/Scripts/pyinstaller --noconfirm backend/winregi.spec"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "cross-env": "^7.0.3",
+    "electron": "^28.1.0",
+    "electron-builder": "^24.9.1",
+    "typescript": "^5.3.3",
+    "wait-on": "^7.2.0"
+  },
+  "dependencies": {
+    "is-admin": "^4.0.0",
+    "node-fetch": "^3.3.2"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "appId": "com.winregi.app",
+  "productName": "WinRegi",
+  "directories": {
+    "output": "release"
+  },
+  "files": [
+    "dist-electron/**/*",
+    "src/renderer/dist/**/*"
+  ],
+  "extraResources": [
+    {
+      "from": "dist/api.exe",
+      "to": "api.exe"
+    }
+  ],
+  "win": {
+    "target": "nsis",
+    "icon": "resources/icon.ico",
+    "requestedExecutionLevel": "asInvoker" 
+  },
+  "nsis": {
+    "oneClick": false,
+    "perMachine": false,
+    "allowToChangeInstallationDirectory": true
+  }
+}
