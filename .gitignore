@@ -54,5 +54,8 @@ Thumbs.db
 
 # WinRegi Specific
 backend/user.json
+backend/database/user_settings.json
+backend/database/user.json
+user_settings.json
 # We moved data to APPDATA, but just in case
 local_db.sqlite
