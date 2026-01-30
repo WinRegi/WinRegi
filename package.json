@@ -4,6 +4,10 @@
   "main": "dist-electron/main.js",
   "description": "Windows Control Center",
   "author": "Anish Kumar",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/WinRegi/WinRegi.git"
+  },
   "scripts": {
     "dev": "concurrently \"npm run dev:renderer\" \"npm run dev:electron\"",
     "dev:renderer": "npm run dev --prefix src/renderer",
@@ -12,6 +16,7 @@
     "compile:backend": "backend/venv/Scripts/pyinstaller --noconfirm backend/winregi.spec"
   },
   "devDependencies": {
+    "@types/semver": "^7.7.1",
     "concurrently": "^8.2.2",
     "cross-env": "^7.0.3",
     "electron": "^28.1.0",
@@ -20,6 +25,8 @@
     "wait-on": "^7.2.0"
   },
   "dependencies": {
+    "electron-log": "^5.4.3",
+    "electron-updater": "^6.7.3",
     "is-admin": "^4.0.0",
     "node-fetch": "^3.3.2"
   }

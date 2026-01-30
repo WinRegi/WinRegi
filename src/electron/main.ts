@@ -2,6 +2,12 @@ import { app, BrowserWindow, ipcMain, shell } from 'electron';
 import path from 'path';
 import { spawn, ChildProcess } from 'child_process';
 import fs from 'fs';
+import { autoUpdater } from 'electron-updater';
+import log from 'electron-log';
+
+// Configure logging
+log.transports.file.level = 'info';
+autoUpdater.logger = log;
 
 let mainWindow: BrowserWindow | null = null;
 let backendProcess: ChildProcess | null = null;
@@ -85,6 +91,15 @@ function createWindow() {
         autoHideMenuBar: true,
         title: "WinRegi",
         icon: path.join(__dirname, '../../resources/icon.ico') // Ensure icon is loaded in dev/prod
+    });
+
+
+    mainWindow.on('ready-to-show', () => {
+        if (mainWindow) mainWindow.show();
+        // Check for updates and notify without user interaction for now (download in background)
+        if (!isDev) {
+            autoUpdater.checkForUpdatesAndNotify();
+        }
     });
 
     if (isDev) {

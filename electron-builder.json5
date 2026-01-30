@@ -4,6 +4,13 @@
   "directories": {
     "output": "release"
   },
+  "publish": [
+    {
+      "provider": "github",
+      "owner": "WinRegi",
+      "repo": "WinRegi"
+    }
+  ],
   "files": [
     "dist-electron/**/*",
     "src/renderer/dist/**/*"
